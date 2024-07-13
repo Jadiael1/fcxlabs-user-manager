@@ -66,6 +66,7 @@ FCxLabs.UserManager é uma aplicação ASP.NET Core para gerenciamento de usuár
 
 3. Execute as migrações do Entity Framework Core para criar o banco de dados:
    ```sh
+   dotnet ef migrations add Initial
    dotnet ef database update
    ```
 
