@@ -1,6 +1,6 @@
 using System;
 
-namespace CRUD_API_ASPNET_DOTNET_5.Controllers
+namespace FCxLabs.UserManager.Controllers
 {
     public class UserQueryController
     {

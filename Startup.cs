@@ -15,10 +15,10 @@ using Microsoft.AspNetCore.HttpOverrides;
 using System.Net;
 
 
-using CRUDAPI.Data;
+using FCxLabs.UserManager.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace CRUDAPI
+namespace FCxLabs.UserManager
 {
     public class Startup
     {
@@ -58,7 +58,7 @@ namespace CRUDAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CRUDAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FCxLabs.UserManager", Version = "v1" });
             });
         }
 
@@ -82,7 +82,7 @@ namespace CRUDAPI
             app.UseSwaggerUI(c =>
             {
                 c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRUDAPI v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "FCxLabs.UserManager v1");
             });
 
             //app.UseHttpsRedirection();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace CRUDAPI.Data
+namespace FCxLabs.UserManager.Data
 {
     public class User
     {

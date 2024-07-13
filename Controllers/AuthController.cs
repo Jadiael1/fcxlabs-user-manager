@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CRUDAPI.Data;
+using FCxLabs.UserManager.Data;
 
-namespace CRUD_API_ASPNET_DOTNET_5.Controllers
+namespace FCxLabs.UserManager.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
