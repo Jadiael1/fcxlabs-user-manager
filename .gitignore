@@ -92,7 +92,7 @@ runtime/
 # Visual Studio 2019
 .vs/
 # Uncomment if needed to ignore .NET Core EF migration files
-# Migrations/
+Migrations/
 
 # Database
 *.mdf
