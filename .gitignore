@@ -1,0 +1,218 @@
+# Compiled source files
+*.dll
+*.exe
+*.so
+*.dylib
+*.pyc
+*.pyo
+*.pdb
+
+# Packages
+*.nupkg
+# The packages folder can be ignored because of the package restore feature
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated if needed
+#**/[Pp]ackages/repositories.config
+
+# Npm package lock file
+package-lock.json
+
+# Directories for build output
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto generated files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.history/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ASP.NET Runtime stores
+.dnx
+aspnet_client
+aspnet_packages
+runtime/
+
+# Azure Web App deployment
+.azure/
+
+# Log files
+*.log
+
+# Local History for JetBrains Rider
+.idea/
+
+# Rider's temporary files
+.idea_modules/
+.idea/
+.idea_modules/
+.idea/
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+.mono
+
+# Mac-specific
+.DS_Store
+
+# Microsoft Visual Studio Code
+.vscode/
+
+# Visual Studio 2019
+.vs/
+# Uncomment if needed to ignore .NET Core EF migration files
+# Migrations/
+
+# Database
+*.mdf
+*.ldf
+
+# DotNet specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publish output
+publish/
+
+# ASP.NET Core secrets folder
+**/secrets.json
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+.idea/
+.idea_modules/
+
+# Cake build directory
+.tools/
+.cake/
+.cake/repositories.config
+
+#  For Ignore Resharper temporary files
+_ReSharper*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.history/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ASP.NET Runtime stores
+.dnx
+aspnet_client
+aspnet_packages
+runtime/
+
+# Azure Web App deployment
+.azure/
+
+# Log files
+*.log
+
+# Local History for JetBrains Rider
+.idea/
+
+# Rider's temporary files
+.idea_modules/
+.idea/
+.idea_modules/
+.idea/
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+.mono
+
+# Mac-specific
+.DS_Store
+
+# Microsoft Visual Studio Code
+.vscode/
+
+# Visual Studio 2019
+.vs/
+# Uncomment if needed to ignore .NET Core EF migration files
+# Migrations/
+
+# Database
+*.mdf
+*.ldf
+
+# DotNet specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publish output
+publish/
+
+# ASP.NET Core secrets folder
+**/secrets.json
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+.idea/
+.idea_modules/
+
+# Cake build directory
+.tools/
+.cake/
+.cake/repositories.config
+
+# Ignore Resharper temporary files
+_ReSharper*
+
+# Backup files
+*.bak
+*.swp
+*~.nib
+
+**/appsettings.*
