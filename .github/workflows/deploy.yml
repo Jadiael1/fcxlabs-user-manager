@@ -38,10 +38,22 @@ jobs:
     - name: Create appsettings.json locally
       run: |
         echo '${{ secrets.VPS_APP_SETTINGS }}' > appsettings.json
+    
+    - name: Create appsettings.Development.json locally
+      run: |
+        echo '${{ secrets.VPS_APP_SETTINGS }}' > appsettings.Development.json
 
     - name: Add VPS host to known_hosts
       run: |
         ssh-keyscan -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
+    
+    - name: Run migrations
+      run: |
+        dotnet ef migrations add Initial --context Data/AppDbContext --project ./FCxLabs.UserManager.csproj
+
+    - name: Run database update
+      run: |
+        dotnet ef database update --context Data/AppDbContext --project ./FCxLabs.UserManager.csproj
 
     - name: Build the project
       run: dotnet publish ./FCxLabs.UserManager.csproj -c Release -o ./output
@@ -60,7 +72,7 @@ jobs:
 
     - name: Copy appsettings.Development.json to server
       run: |
-        scp -o StrictHostKeyChecking=no -P ${{ secrets.VPS_PORT }} appsettings.json ${{ secrets.VPS_HOST }}:${{ secrets.VPS_APP_DIR }}/appsettings.Development.json
+        scp -o StrictHostKeyChecking=no -P ${{ secrets.VPS_PORT }} appsettings.Development.json ${{ secrets.VPS_HOST }}:${{ secrets.VPS_APP_DIR }}/appsettings.Development.json
 
     - name: Clean up
       run: |
