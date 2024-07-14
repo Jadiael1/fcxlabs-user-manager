@@ -76,6 +76,8 @@ namespace FCxLabs.UserManager
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }else{
+                app.UseHsts();
             }
 
             app.UseSwagger();
