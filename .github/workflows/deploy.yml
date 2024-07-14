@@ -51,6 +51,10 @@ jobs:
       run: |
         dotnet ef migrations add Initial
 
+    - name: Run Drop database
+      run: |
+        dotnet ef database drop -f --project ./FCxLabs.UserManager.csproj
+
     - name: Run database update
       run: |
         dotnet ef database update --project ./FCxLabs.UserManager.csproj
