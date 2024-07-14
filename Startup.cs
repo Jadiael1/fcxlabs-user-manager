@@ -60,7 +60,7 @@ namespace FCxLabs.UserManager
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FCxLabs.UserManager", Version = "v1" });
 
-                // c.AddServer(new OpenApiServer { Url = "https://api-fcxlabs-usermanager.juvhost.com" });
+                c.AddServer(new OpenApiServer { Url = "https://api-fcxlabs-usermanager.juvhost.com" });
             });
         }
 
