@@ -53,7 +53,7 @@ jobs:
 
     - name: Run database update
       run: |
-        dotnet ef database update --context Data/AppDbContext --project ./FCxLabs.UserManager.csproj
+        dotnet ef database update --project ./FCxLabs.UserManager.csproj
 
     - name: Build the project
       run: dotnet publish ./FCxLabs.UserManager.csproj -c Release -o ./output
