@@ -87,7 +87,7 @@ namespace FCxLabs.UserManager
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "FCxLabs.UserManager v1");
             });
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
