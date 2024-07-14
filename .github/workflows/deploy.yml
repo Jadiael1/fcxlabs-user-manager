@@ -65,3 +65,7 @@ jobs:
     - name: Clean up
       run: |
         rm appsettings.json
+    
+    - name: Restart Service
+      run: |
+        ssh -o StrictHostKeyChecking=no -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_HOST }} "sudo /bin/systemctl restart kestrel-crudapi.service"
