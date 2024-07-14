@@ -2,6 +2,8 @@
 
 FCxLabs.UserManager é uma aplicação ASP.NET Core para gerenciamento de usuários, incluindo funcionalidades de autenticação, consulta de usuários e operações CRUD.
 
+# Sistema Online
+- [https://api-fcxlabs-usermanager.juvhost.com](https://api-fcxlabs-usermanager.juvhost.com)
 
 # Front-End
 - [Front-FCxLabs-User-Manager](https://github.com/Jadiael1/front-fcxlabs-user-manager)
