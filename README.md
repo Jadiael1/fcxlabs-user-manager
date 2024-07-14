@@ -183,6 +183,10 @@ A documentação da API está disponível através do Swagger. Após iniciar a a
 }
 ```
 
+## Contato
+
+Para mais informações, entre em contato através do email: jadiael@hotmail.com.br.
+
 ## Contribuição
 
 Sinta-se à vontade para contribuir com este projeto através de pull requests.
