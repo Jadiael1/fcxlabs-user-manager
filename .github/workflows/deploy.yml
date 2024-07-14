@@ -1,0 +1,67 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '5.0.x'
+
+    - name: Install dotnet-ef tool
+      run: dotnet tool install --global dotnet-ef --version 5.0.5
+
+    - name: Add .NET tools to PATH
+      run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.VPS_DEPLOY_KEY }}
+
+    - name: Restore dependencies
+      run: dotnet restore FCxLabs.UserManager.csproj
+
+    - name: Create appsettings.json locally
+      run: |
+        echo '${{ secrets.VPS_APP_SETTINGS }}' > appsettings.json
+
+    - name: Add VPS host to known_hosts
+      run: |
+        ssh-keyscan -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
+
+    - name: Build the project
+      run: dotnet publish ./FCxLabs.UserManager.csproj -c Release -o ./output
+
+    - name: Clean VPS directory
+      run: |
+        ssh -o StrictHostKeyChecking=no -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_HOST }} "find ${{ secrets.VPS_APP_DIR }} -mindepth 1 -exec rm -rf {} +"
+
+    - name: Copy files to VPS
+      run: |
+        rsync -avz --delete --exclude 'appsettings.json' --exclude 'appsettings.Development.json' -e "ssh -p ${{ secrets.VPS_PORT }}" ./output/ ${{ secrets.VPS_HOST }}:${{ secrets.VPS_APP_DIR }}/
+
+    - name: Copy appsettings.json to server
+      run: |
+        scp -o StrictHostKeyChecking=no -P ${{ secrets.VPS_PORT }} appsettings.json ${{ secrets.VPS_HOST }}:${{ secrets.VPS_APP_DIR }}/appsettings.json
+
+    - name: Copy appsettings.Development.json to server
+      run: |
+        scp -o StrictHostKeyChecking=no -P ${{ secrets.VPS_PORT }} appsettings.json ${{ secrets.VPS_HOST }}:${{ secrets.VPS_APP_DIR }}/appsettings.Development.json
+
+    - name: Clean up
+      run: |
+        rm appsettings.json
